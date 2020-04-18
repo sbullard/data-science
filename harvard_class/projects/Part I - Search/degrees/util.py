@@ -4,7 +4,7 @@ class Node():
         self.parent = parent
         self.action = action
 
-
+# LIFO
 class StackFrontier():
     def __init__(self):
         self.frontier = []
@@ -26,7 +26,7 @@ class StackFrontier():
             self.frontier = self.frontier[:-1]
             return node
 
-
+# FIFO
 class QueueFrontier(StackFrontier):
 
     def remove(self):

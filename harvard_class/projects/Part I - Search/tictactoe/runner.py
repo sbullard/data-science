@@ -63,7 +63,6 @@ while True:
             elif playOButton.collidepoint(mouse):
                 time.sleep(0.2)
                 user = ttt.O
-
     else:
 
         # Draw game board
@@ -91,7 +90,7 @@ while True:
 
         game_over = ttt.terminal(board)
         player = ttt.player(board)
-
+        print(player)
         # Show title
         if game_over:
             winner = ttt.winner(board)
@@ -124,6 +123,7 @@ while True:
             mouse = pygame.mouse.get_pos()
             for i in range(3):
                 for j in range(3):
+                    print(i,j)
                     if (board[i][j] == ttt.EMPTY and tiles[i][j].collidepoint(mouse)):
                         board = ttt.result(board, (i, j))
 

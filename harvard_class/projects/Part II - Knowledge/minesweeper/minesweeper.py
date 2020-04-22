@@ -92,9 +92,11 @@ class Sentence():
     """
 
     def __init__(self, cells, count):
+        self.initial_cell = set()
         self.cells = set(cells)
         self.count = count
         self.safe_cells = set()
+        self.mine_cells = set()
 
     def __eq__(self, other):
         return self.cells == other.cells and self.count == other.count
@@ -106,29 +108,27 @@ class Sentence():
         """
         Returns the set of all cells in self.cells known to be mines.
         """
-        raise NotImplementedError
+        return self.mine_cells
 
     def known_safes(self):
         """
         Returns the set of all cells in self.cells known to be safe.
         """
-        return(self.safe_cells)
+        return self.safe_cells
 
     def mark_mine(self, cell):
         """
         Updates internal knowledge representation given the fact that
         a cell is known to be a mine.
         """
-        raise NotImplementedError
+        self.mine_cells.add(cell)
 
     def mark_safe(self, cell):
         """
         Updates internal knowledge representation given the fact that
         a cell is known to be safe.
         """
-        if cell in self.cells:
-            self.safe_cells.add(cell)
-            self.cells.remove(cell)
+        self.safe_cells.add(cell)
         
 
 class MinesweeperAI():
@@ -154,51 +154,34 @@ class MinesweeperAI():
         # List of sentences about the game known to be true
         self.knowledge = []
 
-    def mark_mine(self, cell):
-        """
-        Marks a cell as a mine, and updates all knowledge
-        to mark that cell as a mine as well.
-        """
-        self.mines.add(cell)
-
-    def mark_safe(self, cell):
-        """
-        Marks a cell as safe, and updates all knowledge
-        to mark that cell as safe as well.
-        """
-        self.safes.add(cell)
 
     def add_knowledge(self, cell, count):
         """
         Called when the Minesweeper board tells us, for a given
         safe cell, how many neighboring cells have mines in them.
-
-            4) mark any additional cells as safe or as mines
-               if it can be concluded based on the AI's knowledge base
-            5) add any new sentences to the AI's knowledge base
-               if they can be inferred from existing knowledge
         """
+
         #-----------------------------------------------------------------
-        # 1. ADD AND REMOVE CURRENT MOVE CELL AS NECESSARY
+        # 1. Add cell to self.moves_made and self.safes, and remove cell
+        #    from self.available_moves as it is not longer available
         #----------------------------------------------------------------- 
    
-        # 1a. Add cell to self.moves_made
+        # 1a. Add cell to self.moves_made and self.safes
         self.moves_made.add(cell)
+        self.safes.add(cell)
         
         # 1b. Remove cell from available moves
         if len(self.available_moves) > 0:
-            self.available_moves.remove(cell)
-        
-        # 1c. Remove cell from self.safes as it is no longer eligable
-        if cell in self.safes: 
-            self.safes.remove(cell)
+            if cell in self.available_moves:
+                self.available_moves.remove(cell)
 
 
         #-----------------------------------------------------------------
-        # 2. MARK CURRENT MOVE CELL AS SAFE IF AND GET ALL SURROUND CELLS
+        # 2. Get current move cells neighbors (if any), if count = 0,
+        #    then add them to safe moves
         #-----------------------------------------------------------------
 
-        # 2b. Get all of current cells neighbors that are still available
+        # 2a. Get all of current cells neighbors that are still available
         neighbors = set()
         for i in range(cell[0] - 1, cell[0] + 2):
             for j in range(cell[1] - 1, cell[1] + 2):
@@ -208,113 +191,183 @@ class MinesweeperAI():
                     if (i,j) not in self.moves_made:
                         neighbors.add((i,j))
 
-        # 2a. Mark all available neighbors of current cell that are safe
+        # 2b. Mark all available neighbors of current cell that are safe
         if count == 0:
             for neighbor in neighbors:
                 if neighbor not in self.moves_made:
-                    self.mark_safe(neighbor)
+                    self.safes.add(neighbor)
 
-        #print(f'Available Moves: {self.available_moves}') 
-        #print(f'Moves Made: {self.moves_made}')
-        #print(f'Current Move Cell: {cell}')
-        #print(f'All Available Neighbors: {neighbors}')
-        #print(f'Safe Cells: {self.safes}')
- 
-         
+
         #-----------------------------------------------------------------
-        # 3. Create Sentence for all available neighbors and add to KB
+        # 3. Create sentence for all available neighbors and add to KB
         #-----------------------------------------------------------------
-                
+        
+        # If count of nearby cells passed in from runner.py == 0,
+        # OR if then length of neighbors == count (all bombs), no sentence 
         if count == 0 or len(neighbors) == count:
             #print('DONT NEED TO CREATE A SENTENCE')
-            pass             
+            pass            
         else: 
             sentence = Sentence(neighbors, count)
+            sentence.initial_cell.add(cell)
+            sentence.safe_cells.add(cell)
+            sentence.initial_cell.add(cell)
             self.knowledge.append(sentence)
-           
-
+            print(f'---------------------------------------------------')
+            print(f'\nNEW SENTENCE CREATED:')
+            print(f'Move Cell: {sentence.initial_cell}')
+            print(f'Neighbor Cells: {sentence.cells}')
+            print(f'Bomb Count: {sentence.count}')
+            print(f'---------------------------------------------------')
+         
+        
         #-----------------------------------------------------------------
         # 4. Update all sentences to reflect current cell information
         #-----------------------------------------------------------------
-        for i, sentence in enumerate(self.knowledge):
-            #print(f'Original Sentence #{i+1}: {sentence}')
-            #print(f'Sentence #{i+1} Known Safe Cells: {sentence.safe_cells}')
-            
-            # 4a. Mark the cell as safe in each sentence that contains it and remove
-            #     the cell from each sentence as it is no longer eligible. 
-            if cell in sentence.cells:
-                sentence.mark_safe(cell)
 
-            #print(f'Adjusted Sentence #{i+1} in KB: {sentence}')
-            #print(f'Adjusted Sentence #{i+1} Known Safe Cells: {sentence.safe_cells}')
+        # 4a. Remove current moves cell from all sentences        
+        if len(self.knowledge) > 0:
+            for i, sentence in enumerate(self.knowledge):
+                # 4a. Remove the current moves cell from each sentence that
+                #     contains it as the cell is no longer a threat.
+                if cell in sentence.cells:
+                    sentence.safe_cells.add(cell)
+                    sentence.cells.remove(cell)
+                    
+                  
+        # 4b. Check sentences to see if the length of sentence matches the count value
+        #     if so then the sentence only contains mines. So add them to self.mines
+        #     and sentence mine_cells
+        if len(self.knowledge) > 0:
+            for i, sentence in enumerate(self.knowledge):
+                if sentence.count == len(sentence.cells):
+                    for cell in sentence.cells:
+                        self.mines.add(cell)
+                        sentence.mine_cells.add(cell)
+                        if cell in self.available_moves:  
+                            self.available_moves.remove(cell)
+                    print(f'\nMINE FOUND IN SENTENCE FOR CEL {sentence.initial_cell}:')
+                    print(f'Move Cell: {sentence.initial_cell}')
+                    print(f'Neighbor Cells: {sentence.cells}')
+                    print(f'Bomb Count: {sentence.count}')
+                    print(f'Safe Cells: {sentence.safe_cells}')
+                    print(f'Mine Cells: {sentence.mine_cells}')
+                    print(f'---------------------------------------------------')
+             
+                
+        # 4c. Check each sentence for existing known mines from self.mines
+        #     if a mine from self.mines is found in the sentence, then
+        #     remove the mine and re-check the length to see if it matches
+        #     the count. If so, the remaining cells are safe and the sentence
+        #     can be deleted
+        if len(self.mines) > 0 and len(self.knowledge) > 0:
+            for mine in self.mines:
+                for sentence in self.knowledge:
+                    if mine in sentence.cells:
+                        if sentence.count == 1:
+                            # remove mine from sentence, and mark other cells safe
+                            sentence.cells.remove(mine)
+                            for c in sentence.cells:
+                                print(f'{c} ADDED TO SAFE CELLS ')
+                                self.safes.add(c)
+                                sentence.safe_cells.add(c)                      
+                        else:
+                            # remove mine from sentence and subtract 1 from count
+                            print(f'SENTENCE ADJUSTED FOR MINE:')
+                            print(f'Original Sentence: {sentence}, Count: {sentence.count}')
+                            sentence.mine_cells.add(mine)
+                            sentence.cells.remove(mine)
+                            sentence.count -= 1 
+                            print(f'Adjusted Sentence: {sentence}, Count: {sentence.count}\n')
 
-         
-        # 4b. Check each sentence for mines. If the count of the current cell
-        #     matches the number of cells in the sentence, then they are all mines
-        #     and at this point the sentence can be removed from KB.
 
-        for i, sentence in enumerate(self.knowledge):
-            if sentence.count == len(sentence.cells):
-                for cel in sentence.cells:
-                    self.mark_mine(cel)
-                    if cel in self.available_moves:  
-                        self.available_moves.remove(cel)
-                self.knowledge.remove(sentence)
-     
+        # 4d Remove all safe cells from sentences (internal to sentences)
+        if len(self.knowledge) > 0 and len(self.safes) > 0:
+            for safe_cell in self.safes:
+                for sentence in self.knowledge:
+                    if safe_cell in sentence.cells:
+                        sentence.cells.remove(safe_cell)
+                        sentence.safe_cells.add(safe_cell)
+                        
+                        # Now that cell removed, do mine check
+                        if sentence.cells == sentence.count:
+                            for cell in sentence.cells:
+                                self.mines.add(cell)
+                                sentence.mine_cells.add(cell)
+                                if cell in self.available_moves:  
+                                    self.available_moves.remove(cell) 
+                            print(f'\nMINE FOUND IN SENTENCE FOR CEL {sentence.initial_cell}:')
+                            print(f'Move Cell: {sentence.initial_cell}')
+                            print(f'Neighbor Cells: {sentence.cells}')
+                            print(f'Bomb Count: {sentence.count}')
+                            print(f'Safe Cells: {sentence.safe_cells}')
+                            print(f'Mine Cells: {sentence.mine_cells}')
+                            print(f'---------------------------------------------------')     
+
+                    
+        # 4e. Perform one final mine check against all sentences and delete as necessary
+        if len(self.mines) > 0 and len(self.knowledge) > 0:
+            for mine in self.mines:
+                for sentence in self.knowledge:
+                    if mine in sentence.cells:
+                        if sentence.count == 1:
+                            # remove mine from sentence, add all other cells to self.safes, 
+                            # then delete sentence
+                            sentence.cells.remove(mine)
+                            for c in sentence.cells:
+                                print(f'{c} ADDED TO SAFE CELLS ')
+                                self.safes.add(c)
+                                sentence.safe_cells.add(c)
+
+                        else:
+                            # remove mine from sentence and subtract 1 from count
+                            print(f'SENTENCE ADJUSTED FOR MINE:')
+                            print(f'Original Sentence: {sentence}, Count: {sentence.count}')
+                            sentence.mine_cells.add(mine)
+                            sentence.cells.remove(mine)
+                            sentence.count -= 1 
+                            print(f'Adjusted Sentence: {sentence}, Count: {sentence.count}\n')
+
 
         #-----------------------------------------------------------------
         # 5. Create subsets from existing sentences if possible
         #-----------------------------------------------------------------
-        if len(self.knowledge) > 1:
-            for i in range(0, len(self.knowledge)-1):
-                for j in range(i+1, len(self.knowledge)):
-                    if len(self.knowledge[i].cells) == len(self.knowledge[j].cells):
-                        continue
-                    elif not self.knowledge[i].cells.intersection(self.knowledge[j].cells):
-                        continue
-                    else:                                             
-                        if len(self.knowledge[i].cells) > len(self.knowledge[j].cells):
-                        #if self.knowledge[i].count > self.knowledge[j].count:
-                            new_cells = self.knowledge[i].cells - self.knowledge[j].cells
-                            new_count = self.knowledge[i].count - self.knowledge[j].count
-                            print(f'Possible New Sentence: {new_cells}')
-                            print(f'Comes from: {self.knowledge[i].cells} and: {self.knowledge[j].cells}')  
-                            print(f'Original Counts: i: {self.knowledge[i].count}, j: {self.knowledge[j].count}')
-                            print(f'New Sentence Count Value: {new_count}')
-                            if new_count == 0:
-                                print('NEW COUNT FUCKING EQUALS ZERIO')
-                                for cel in new_cells: 
-                                    self.safes.add(cel)
-# HERE IS WHERE PART OF PROBLEM IS, MUST REMOVE ALL ADDED SAFE CELL FROM ALL SENTENCES IN KB AFTER
-                                    print(f'{cel} added to Safes: {self.safes}')
-                            else:
-                                new_sentence = Sentence(new_cells, new_count)
-                                self.knowledge.append(new_sentence)
-                                print(f'New Sentence Created: {new_sentence}')
-                                continue
-                        else:
-                            new_cells = self.knowledge[j].cells - self.knowledge[i].cells
-                            new_count = self.knowledge[j].count - self.knowledge[i].count
-                            print(f'Possible New Sentence: {new_cells}')
-                            print(f'Comes from: {self.knowledge[j].cells} and: {self.knowledge[i].cells}')  
-                            print(f'Original Counts: j: {self.knowledge[j].count}, i: {self.knowledge[i].count}') 
-                            print(f'New Sentence Count Value: {new_count}')
-                            if new_count == 0:
-                                print('NEW COUNT FUCKING EQUALS ZERO TIMES TWO!!!!')
-                                for cel in new_cells: 
-                                    self.safes.add(cel)
-                                    print(f'{cel} added to Safes: {self.safes}')
-                            else:
-                                new_sentence = Sentence(new_cells, new_count)
-                                self.knowledge.append(new_sentence)
-                                print(f'New Sentence Created: {new_sentence}')
-                                continue
+      
+#        # 5b. Create new Sentence if possible
+#        if len(self.knowledge) > 1:
+#            for i in range(0, len(self.knowledge)-1):
+#                for j in range(i+1, len(self.knowledge)):
+#                    if self.knowledge[i].cells == self.knowledge[j].cells:
+#                        continue  
+#                    elif self.knowledge[i].count == self.knowledge[j].count:
+#                        continue
+#                    elif not self.knowledge[i].cells.intersection(self.knowledge[j].cells):
+#                        continue
+#                    else:
+#                        print(f'NEW SENTENCE CREATED FROM TWO OTHERS')
+#                        print(f'Original Sentence #{i}: {self.knowledge[i].cells}, Count: {self.knowledge[i].count}')
+#                        print(f'Original Sentence #{j}: {self.knowledge[j].cells}, Count: {self.knowledge[j].count}')
+#                        if self.knowledge[i].count > self.knowledge[j].count:
+#                            new_s = self.knowledge[i].cells - self.knowledge[j].cells
+#                            new_c = self.knowledge[i].count - self.knowledge[j].count
+#                            self.knowledge.append(Sentence(new_s, new_c) )
+#                        else:
+#                            new_s = self.knowledge[j].cells - self.knowledge[i].cells
+#                            new_c = self.knowledge[j].count - self.knowledge[i].count
+#                            self.knowledge.append(Sentence(new_s, new_c))
+
+        print(f'All Available Moves: {self.available_moves}\n')
+        print(f'All Moves Made: {self.moves_made}\n')
+        print(f'All Marked Safes: {self.safes}\n')
+        print(f'All Marked Mines: {self.mines}\n')
+  
+        for i, s in enumerate(self.knowledge):
+            print(f'Number of Senteces in KB: {len(self.knowledge)}')
+            print(f'KB S{i}: {s}, Count: {s.count}\n')
                             
 
-     
-
-            
-            
+                               
+                                    
     def make_safe_move(self):
         """
         Returns a safe cell to choose on the Minesweeper board.
@@ -323,12 +376,16 @@ class MinesweeperAI():
 
         This function may use the knowledge in self.mines, self.safes
         and self.moves_made, but should not modify any of those values.
-        """
+        """       
+        # ALWAYS RUN A CHECK TO ENSURE THAT NO MINES IN MINE LIST ARE IN SAFES LIST
+        # IF THEY ARE, MUST REMOVE THE MINE MOVE FROM SAFES
+
         if len(self.safes) == 0:
             return None
         else:
             for c in self.safes:
                 if c not in self.moves_made:
+                    print(f'Safe Move: {c}')
                     return(c)
                     break
 
@@ -345,5 +402,6 @@ class MinesweeperAI():
             for i in range(0, self.height):
                 for j in range(0, self.height):
                     self.available_moves.add((i,j))
-
-        return(random.choice(list(self.available_moves)))
+        rmove = random.choice(list(self.available_moves))
+        print(f'Random Move: {rmove}')
+        return(rmove)

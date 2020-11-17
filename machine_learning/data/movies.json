@@ -1,0 +1,14 @@
+[
+ {
+  "title" : "Star Wars: Episode IV - A New Hope",
+  "year_" : 1977,
+  "duration" : 121,
+  "director" : "George Lucas"
+ },
+ {
+  "title" : "Forrest Gump",
+  "year_" : 1994,
+  "duration" : 142,
+  "director" : "Robert Zemeckis"	
+ }
+]

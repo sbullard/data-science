@@ -1,0 +1,11 @@
+﻿id,customer,Item,quantity,sales
+1,John,bike,1,$100.00 
+2,Susie,snowboard,1,$200.00 
+3,Jenny,bike,1,$300.00 
+4,Jenny,skateboard,2,$400.00 
+5,Pedro,surf board,1,$500.00 
+6,Susie,skateboard,2,$600.00 
+7,Susie,bike,2,$700.00 
+8,John,surf board,1,$800.00 
+9,Tom,surf board,2,$900.00 
+10,Greg,bike,1,"$1,000.00 "

@@ -1,0 +1,1493 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20212.21.0712.0907                               -->
+<workbook original-version='18.1' source-build='2021.2.1 (20212.21.0712.0907)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='userVal' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+        <calculation class='tableau' formula='4' />
+        <range max='100' min='1' />
+      </column>
+    </datasource>
+    <datasource caption='credit-data-small' inline='true' name='federated.0mf6phc05543xa1bho9az10mlq9d' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='credit-data-small' name='textscan.1wbderw045yjqz1ctw7uv1mhbywk'>
+            <connection class='textscan' directory='C:/Users/Paul/anaconda-projects/data-science/fundamentals/data' filename='credit-data-small.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1wbderw045yjqz1ctw7uv1mhbywk' name='credit-data-small.csv' table='[credit-data-small#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Id' ordinal='0' />
+            <column datatype='string' name='Gender' ordinal='1' />
+            <column datatype='integer' name='Children' ordinal='2' />
+            <column datatype='integer' name='Income' ordinal='3' />
+            <column datatype='string' name='Education' ordinal='4' />
+            <column datatype='string' name='MarriageStatus' ordinal='5' />
+            <column datatype='string' name='HousingType' ordinal='6' />
+            <column datatype='integer' name='Age' ordinal='7' />
+            <column datatype='integer' name='YearsEmployed' ordinal='8' />
+            <column datatype='string' name='job' ordinal='9' />
+            <column datatype='integer' name='FamilyMembers' ordinal='10' />
+            <column datatype='integer' name='CreditScore' ordinal='11' />
+            <column datatype='string' name='Rating' ordinal='12' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.1wbderw045yjqz1ctw7uv1mhbywk' name='credit-data-small.csv' table='[credit-data-small#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='integer' name='Id' ordinal='0' />
+            <column datatype='string' name='Gender' ordinal='1' />
+            <column datatype='integer' name='Children' ordinal='2' />
+            <column datatype='integer' name='Income' ordinal='3' />
+            <column datatype='string' name='Education' ordinal='4' />
+            <column datatype='string' name='MarriageStatus' ordinal='5' />
+            <column datatype='string' name='HousingType' ordinal='6' />
+            <column datatype='integer' name='Age' ordinal='7' />
+            <column datatype='integer' name='YearsEmployed' ordinal='8' />
+            <column datatype='string' name='job' ordinal='9' />
+            <column datatype='integer' name='FamilyMembers' ordinal='10' />
+            <column datatype='integer' name='CreditScore' ordinal='11' />
+            <column datatype='string' name='Rating' ordinal='12' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Children</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Children]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>Children</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Income</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Income]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>Income</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Education</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Education]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>Education</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MarriageStatus</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MarriageStatus]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>MarriageStatus</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>HousingType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[HousingType]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>HousingType</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YearsEmployed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[YearsEmployed]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>YearsEmployed</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>job</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[job]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>job</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>FamilyMembers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[FamilyMembers]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>FamilyMembers</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CreditScore</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[CreditScore]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>CreditScore</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rating</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Rating]</local-name>
+            <parent-name>[credit-data-small.csv]</parent-name>
+            <remote-alias>Rating</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='bad color' datatype='string' name='[Calculation_141863397556510720]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF SUM([CreditScore]) &lt; 850 THEN &apos;RED&apos; END' />
+      </column>
+      <column caption='selectedID' datatype='boolean' name='[Calculation_221520815615950849]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Id] == [Parameters].[Parameter 1]' />
+      </column>
+      <column caption='Colors' datatype='string' name='[Calculation_502151367676743680]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF SUM([CreditScore]) &gt; 749 THEN &apos;GREEN&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &gt;= 690 AND&#13;&#10;       SUM([CreditScore]) &lt; 750 THEN &apos;BLUE&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &gt;= 580 AND&#13;&#10;       SUM([CreditScore]) &lt; 690 THEN &apos;YELLOW&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &lt; 580 THEN &apos;RED&apos;&#13;&#10;&#13;&#10;END' />
+      </column>
+      <column caption='Credit Score' datatype='integer' name='[CreditScore]' role='measure' type='quantitative' />
+      <column caption='Family Members' datatype='integer' name='[FamilyMembers]' role='measure' type='quantitative' />
+      <column caption='Housing Type' datatype='string' name='[HousingType]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Id]' role='dimension' type='ordinal' />
+      <column caption='Marriage Status' datatype='string' name='[MarriageStatus]' role='dimension' type='nominal' />
+      <column datatype='string' name='[Rating]' role='dimension' type='nominal' />
+      <column caption='Years Employed' datatype='integer' name='[YearsEmployed]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='credit-data-small.csv' datatype='table' name='[__tableau_internal_object_id__].[credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4]' role='measure' type='quantitative' />
+      <column caption='Job' datatype='string' name='[job]' role='dimension' type='nominal' />
+      <column-instance column='[Rating]' derivation='Attribute' name='[attr:Rating:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Rating]' derivation='None' name='[none:Rating:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_502151367676743680]' derivation='User' name='[usr:Calculation_502151367676743680:nk]' pivot='key' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Rating:nk]' type='palette'>
+            <map to='#0e7df4'>
+              <bucket>&quot;good&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bad&quot;</bucket>
+            </map>
+            <map to='#55aa7f'>
+              <bucket>&quot;excellent&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Good&quot;</bucket>
+            </map>
+            <map to='#d83131'>
+              <bucket>&quot;bad&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Fair&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Excellent&quot;</bucket>
+            </map>
+            <map to='#ffd010'>
+              <bucket>&quot;fair&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[attr:Rating:nk]' type='palette'>
+            <map to='#0e7df4'>
+              <bucket>&quot;good&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Bad&quot;</bucket>
+            </map>
+            <map to='#55aa7f'>
+              <bucket>&quot;excellent&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Good&quot;</bucket>
+            </map>
+            <map to='#d83131'>
+              <bucket>&quot;bad&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Fair&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Excellent&quot;</bucket>
+            </map>
+            <map to='#ffd010'>
+              <bucket>&quot;fair&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[usr:Calculation_502151367676743680:nk]' type='palette'>
+            <map to='#0c76e6'>
+              <bucket>&quot;BLUE&quot;</bucket>
+            </map>
+            <map to='#4a956e'>
+              <bucket>&quot;GREEN&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#d83131'>
+              <bucket>&quot;RED&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;YELLOW&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='userVal' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+          <calculation class='tableau' formula='4' />
+          <range max='100' min='1' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='credit-data-small.csv' id='credit-data-small.csv_FBA9DF7D38AA484FB6334B4D65D454B4'>
+            <properties context=''>
+              <relation connection='textscan.1wbderw045yjqz1ctw7uv1mhbywk' name='credit-data-small.csv' table='[credit-data-small#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='Id' ordinal='0' />
+                  <column datatype='string' name='Gender' ordinal='1' />
+                  <column datatype='integer' name='Children' ordinal='2' />
+                  <column datatype='integer' name='Income' ordinal='3' />
+                  <column datatype='string' name='Education' ordinal='4' />
+                  <column datatype='string' name='MarriageStatus' ordinal='5' />
+                  <column datatype='string' name='HousingType' ordinal='6' />
+                  <column datatype='integer' name='Age' ordinal='7' />
+                  <column datatype='integer' name='YearsEmployed' ordinal='8' />
+                  <column datatype='string' name='job' ordinal='9' />
+                  <column datatype='integer' name='FamilyMembers' ordinal='10' />
+                  <column datatype='integer' name='CreditScore' ordinal='11' />
+                  <column datatype='string' name='Rating' ordinal='12' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Credit Score'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Customer ID: &lt;</run>
+            <run>[Parameters].[Parameter 1]</run>
+            <run>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='credit-data-small' name='federated.0mf6phc05543xa1bho9az10mlq9d' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='userVal' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+              <range max='100' min='1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0mf6phc05543xa1bho9az10mlq9d'>
+            <column caption='selectedID' datatype='boolean' name='[Calculation_221520815615950849]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Id] == [Parameters].[Parameter 1]' />
+            </column>
+            <column caption='Colors' datatype='string' name='[Calculation_502151367676743680]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF SUM([CreditScore]) &gt; 749 THEN &apos;GREEN&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &gt;= 690 AND&#13;&#10;       SUM([CreditScore]) &lt; 750 THEN &apos;BLUE&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &gt;= 580 AND&#13;&#10;       SUM([CreditScore]) &lt; 690 THEN &apos;YELLOW&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &lt; 580 THEN &apos;RED&apos;&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Credit Score' datatype='integer' name='[CreditScore]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Id]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[Rating]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_221520815615950849]' derivation='None' name='[none:Calculation_221520815615950849:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Rating]' derivation='None' name='[none:Rating:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CreditScore]' derivation='Sum' name='[sum:CreditScore:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_502151367676743680]' derivation='User' name='[usr:Calculation_502151367676743680:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]'>
+            <groupfilter function='member' level='[none:Calculation_221520815615950849:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' value='494' />
+            <format attr='height' value='726' />
+            <format attr='font-family' value='Tableau Bold' />
+            <format attr='font-size' value='55' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' value='center' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='vertical-align' data-class='subtotal' value='center' />
+            <format attr='vertical-align' data-class='total' value='auto' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='vertical-align' value='auto' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' min='750' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#dce7e1</color>
+                <color>#c8ded2</color>
+                <color>#b5d5c4</color>
+                <color>#a3ccb6</color>
+                <color>#91c3a9</color>
+                <color>#81b99c</color>
+                <color>#72b090</color>
+                <color>#63a784</color>
+                <color>#569e78</color>
+                <color>#4a956e</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0mf6phc05543xa1bho9az10mlq9d].[usr:Calculation_502151367676743680:nk]' />
+              <text column='[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Rating:nk]' />
+              <text column='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{69663F52-BD5C-4E54-B865-6C755EF2B004}' />
+    </worksheet>
+    <worksheet name='Customer Details'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontname='Tableau Bold' fontsize='20'>Client Number:</run>
+            <run fontcolor='#555555' fontname='Tableau Bold' fontsize='20'> &lt;[Parameters].[Parameter 1]&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='credit-data-small' name='federated.0mf6phc05543xa1bho9az10mlq9d' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='userVal' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+              <range max='100' min='1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0mf6phc05543xa1bho9az10mlq9d'>
+            <column datatype='integer' name='[Age]' role='measure' type='quantitative' />
+            <column caption='selectedID' datatype='boolean' name='[Calculation_221520815615950849]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Id] == [Parameters].[Parameter 1]' />
+            </column>
+            <column datatype='integer' name='[Children]' role='measure' type='quantitative' />
+            <column caption='Family Members' datatype='integer' name='[FamilyMembers]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Id]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Income]' role='measure' type='quantitative' />
+            <column caption='Years Employed' datatype='integer' name='[YearsEmployed]' role='measure' type='quantitative' />
+            <column-instance column='[Calculation_221520815615950849]' derivation='None' name='[none:Calculation_221520815615950849:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Age]' derivation='Sum' name='[sum:Age:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Children]' derivation='Sum' name='[sum:Children:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[FamilyMembers]' derivation='Sum' name='[sum:FamilyMembers:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Income]' derivation='Sum' name='[sum:Income:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[YearsEmployed]' derivation='Sum' name='[sum:YearsEmployed:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]'>
+            <groupfilter function='union' user:op='manual'>
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:Age:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:Income:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:YearsEmployed:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:Children:qk]&quot;' />
+              <groupfilter function='member' level='[:Measure Names]' member='&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:FamilyMembers:qk]&quot;' />
+            </groupfilter>
+          </filter>
+          <manual-sort column='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:Age:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:Income:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:YearsEmployed:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:Children:qk]&quot;</bucket>
+              <bucket>&quot;[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:FamilyMembers:qk]&quot;</bucket>
+            </dictionary>
+          </manual-sort>
+          <filter class='categorical' column='[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]'>
+            <groupfilter function='member' level='[none:Calculation_221520815615950849:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]</column>
+            <column>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]' value='166' />
+            <format attr='text-align' value='center' />
+            <format attr='text-format' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:Income:qk]' value='c&quot;$&quot;#,##0;(&quot;$&quot;#,##0)' />
+            <format attr='height' value='41' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='font-size' data-class='subtotal' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]' value='9' />
+            <format attr='height' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]' value='40' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]' value='14' />
+            <format attr='font-family' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]' value='Tableau Bold' />
+            <format attr='color' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]' value='#555555' />
+            <format attr='text-align' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]' value='center' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='12' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='parameter-ctrl'>
+            <format attr='font-size' value='9' />
+            <format attr='font-family' value='Tableau Book' />
+          </style-rule>
+          <style-rule element='parameter-ctrl-title'>
+            <format attr='font-weight' value='bold' />
+            <format attr='font-size' value='9' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0mf6phc05543xa1bho9az10mlq9d].[Multiple Values]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minheight' value='-1' />
+                <format attr='maxheight' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0mf6phc05543xa1bho9az10mlq9d].[:Measure Names]</cols>
+      </table>
+      <simple-id uuid='{482214CF-6FFD-4670-8AE6-26911546ED73}' />
+    </worksheet>
+    <worksheet name='Score Chart'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>Customer ID: &lt;</run>
+            <run>[Parameters].[Parameter 1]</run>
+            <run>&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='credit-data-small' name='federated.0mf6phc05543xa1bho9az10mlq9d' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='userVal' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+              <calculation class='tableau' formula='4' />
+              <range max='100' min='1' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0mf6phc05543xa1bho9az10mlq9d'>
+            <column caption='selectedID' datatype='boolean' name='[Calculation_221520815615950849]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='[Id] == [Parameters].[Parameter 1]' />
+            </column>
+            <column caption='Colors' datatype='string' name='[Calculation_502151367676743680]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF SUM([CreditScore]) &gt; 749 THEN &apos;GREEN&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &gt;= 690 AND&#13;&#10;       SUM([CreditScore]) &lt; 750 THEN &apos;BLUE&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &gt;= 580 AND&#13;&#10;       SUM([CreditScore]) &lt; 690 THEN &apos;YELLOW&apos;&#13;&#10;&#13;&#10;ELSEIF SUM([CreditScore]) &lt; 580 THEN &apos;RED&apos;&#13;&#10;&#13;&#10;END' />
+            </column>
+            <column caption='Credit Score' datatype='integer' name='[CreditScore]' role='measure' type='quantitative' />
+            <column datatype='integer' name='[Id]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_221520815615950849]' derivation='None' name='[none:Calculation_221520815615950849:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CreditScore]' derivation='Sum' name='[sum:CreditScore:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_502151367676743680]' derivation='User' name='[usr:Calculation_502151367676743680:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]'>
+            <groupfilter function='member' level='[none:Calculation_221520815615950849:nk]' member='true' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' field-type='quantitative' max='850' min='300' range-type='fixed' scope='cols' type='space' />
+            <format attr='height' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' value='60' />
+            <format attr='title' class='0' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' scope='cols' value='' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' value='494' />
+            <format attr='height' value='172' />
+            <format attr='font-size' value='72' />
+            <format attr='font-family' value='Tableau Bold' />
+            <format attr='text-align' value='center' />
+            <format attr='vertical-align' data-class='total' value='auto' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='auto' />
+            <format attr='font-size' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' value='10' />
+            <format attr='font-family' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' value='Tableau Bold' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' min='750' type='custom-interpolated'>
+              <color-palette custom='true' name='' type='ordered-sequential'>
+                <color>#f1f1f1</color>
+                <color>#dce7e1</color>
+                <color>#c8ded2</color>
+                <color>#b5d5c4</color>
+                <color>#a3ccb6</color>
+                <color>#91c3a9</color>
+                <color>#81b99c</color>
+                <color>#72b090</color>
+                <color>#63a784</color>
+                <color>#569e78</color>
+                <color>#4a956e</color>
+              </color-palette>
+            </encoding>
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='fill-above' id='refline0' value='#00000000' />
+            <format attr='fill-below' id='refline0' value='#00000000' />
+            <format attr='text-align' id='refline0' value='auto' />
+            <format attr='vertical-align' id='refline0' value='center' />
+            <format attr='font-size' id='refline0' value='12' />
+            <format attr='font-family' id='refline0' value='Tableau Bold' />
+            <format attr='color' id='refline0' value='#1b1b1b' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0mf6phc05543xa1bho9az10mlq9d].[usr:Calculation_502151367676743680:nk]' />
+            </encodings>
+            <reference-line axis-column='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' enable-instant-analytics='true' formula='total' id='refline0' label-type='value' scope='per-pane' value-column='[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]' z-order='1' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols>[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]</cols>
+      </table>
+      <simple-id uuid='{CC84C706-6227-4C72-95AF-511FB3C894B1}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Credit Score Sheet'>
+      <style>
+        <style-rule element='parameter-ctrl'>
+          <format attr='font-weight' value='bold' />
+          <format attr='font-size' value='9' />
+        </style-rule>
+        <style-rule element='parameter-ctrl-title'>
+          <format attr='font-size' value='14' />
+          <format attr='font-weight' value='bold' />
+          <format attr='text-align' value='center' />
+        </style-rule>
+      </style>
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource name='Parameters' />
+      </datasources>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='userVal' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='4'>
+          <calculation class='tableau' formula='4' />
+          <range max='100' min='1' />
+        </column>
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98222' id='33' param='horz' type-v2='layout-flow' w='99064' x='468' y='889'>
+            <zone h='98222' id='28' param='horz' type-v2='layout-flow' w='99064' x='468' y='889'>
+              <zone h='98222' id='26' type-v2='layout-basic' w='99064' x='468' y='889'>
+                <zone h='21778' id='16' param='horz' type-v2='layout-flow' w='87147' x='12385' y='889'>
+                  <zone h='21778' id='5' type-v2='layout-basic' w='87147' x='12385' y='889'>
+                    <zone h='21778' id='3' name='Customer Details' w='87147' x='12385' y='889'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+                <zone custom-title='true' h='21778' id='17' mode='type_in' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='11917' x='468' y='889'>
+                  <formatted-text>
+                    <run fontalignment='1' fontname='Tableau Bold' fontsize='20'>Enter User Id:</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='76444' id='24' name='Credit Score' show-title='false' w='35237' x='468' y='22667'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='48421' id='31' name='Score Chart' show-title='false' w='63827' x='35705' y='50690'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='margin-top' value='20' />
+                    <format attr='margin-right' value='4' />
+                    <format attr='margin-left' value='4' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='28023' id='35' type-v2='text' w='33026' x='35705' y='22667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>Bad</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='14'>(300 - 579)</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='margin-top' value='15' />
+                    <format attr='background-color' value='#d831316a' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='28023' id='36' type-v2='text' w='11806' x='68731' y='22667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>Fair</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='14'>(580 - 688)</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='margin-top' value='15' />
+                    <format attr='background-color' value='#f28e2b6a' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='28023' id='37' type-v2='text' w='7188' x='80537' y='22667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>Good</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='14'>(689 - 749)</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='margin-top' value='15' />
+                    <format attr='background-color' value='#0e7df46a' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='28023' id='38' type-v2='text' w='11807' x='87725' y='22667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>Excellent</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='14'>(750+)</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='margin-top' value='15' />
+                    <format attr='background-color' value='#4a956e6a' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1100' minheight='1100' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='46' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='45' param='vert' type-v2='layout-flow' w='99064' x='468' y='889'>
+                <zone custom-title='true' h='21778' id='17' mode='type_in' param='[Parameters].[Parameter 1]' type-v2='paramctrl' w='11917' x='468' y='889'>
+                  <formatted-text>
+                    <run fontalignment='1' fontname='Tableau Bold' fontsize='20'>Enter User Id:</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='166' h='21778' id='3' is-fixed='true' name='Customer Details' w='87147' x='12385' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='76444' id='24' is-fixed='true' name='Credit Score' show-title='false' w='35237' x='468' y='22667'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='28023' id='35' type-v2='text' w='33026' x='35705' y='22667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>Bad</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='14'>(300 - 579)</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#d831316a' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='28023' id='36' type-v2='text' w='11806' x='68731' y='22667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>Fair</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='14'>(580 - 688)</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#f28e2b6a' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='28023' id='37' type-v2='text' w='7188' x='80537' y='22667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>Good</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='14'>(689 - 749)</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#0e7df46a' />
+                  </zone-style>
+                </zone>
+                <zone forceUpdate='true' h='28023' id='38' type-v2='text' w='11807' x='87725' y='22667'>
+                  <formatted-text>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='20'>Excellent</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                    <run fontalignment='1' fontcolor='#000000' fontname='Tableau Bold' fontsize='14'>(750+)</run>
+                    <run fontalignment='1'>Æ&#10;</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                    <format attr='background-color' value='#4a956e6a' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='48421' id='31' is-fixed='true' name='Score Chart' show-title='false' w='63827' x='35705' y='50690'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{6E7EACF8-A5DC-40D0-9D06-DDBE5BF5B939}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='dashboard' maximized='true' name='Credit Score Sheet'>
+      <viewpoints>
+        <viewpoint name='Credit Score'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Customer Details'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Score Chart'>
+          <zoom type='fit-width' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[usr:Calculation_502151367676743680:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{30276C3D-CFE4-4454-9A16-0A6F57CD4428}' />
+    </window>
+    <window class='worksheet' name='Customer Details'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='type_in' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615070208:nk]</field>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]</field>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Id:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{24218322-BF16-41F2-96FC-29957039A3BF}' />
+    </window>
+    <window class='worksheet' name='Credit Score'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0mf6phc05543xa1bho9az10mlq9d].[usr:Calculation_502151367676743680:nk]' type='color' />
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <tuple-selection>
+            <tuple-reference>
+              <tuple-descriptor>
+                <pane-descriptor>
+                  <x-fields />
+                  <y-fields />
+                </pane-descriptor>
+                <columns>
+                  <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Rating:nk]</field>
+                  <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[sum:CreditScore:qk]</field>
+                  <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[usr:Calculation_502151367676743680:nk]</field>
+                </columns>
+              </tuple-descriptor>
+              <tuple>
+                <value>&quot;Excellent&quot;</value>
+                <value>767</value>
+                <value>&quot;GREEN&quot;</value>
+              </tuple>
+            </tuple-reference>
+          </tuple-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]</field>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Rating:nk]</field>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[usr:Calculation_502151367676743680:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{CBEAE568-AAD8-4D64-8713-C03379AC19DA}' />
+    </window>
+    <window class='worksheet' name='Score Chart'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card mode='slider' param='[Parameters].[Parameter 1]' type='parameter' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Calculation_221520815615950849:nk]</field>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[none:Rating:nk]</field>
+            <field>[federated.0mf6phc05543xa1bho9az10mlq9d].[usr:Calculation_502151367676743680:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{E88D850C-8420-4346-A262-6BDC2CB5390F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Credit Score' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAS60lEQVR4nO3d6W8bZ34H8O/M8D5E6qbu25ZkS7ZsWXZsxTk2ttPNpkWSbZvtbgss2gJF
+      i/4tfVdggQILdLfYtIttNlfjHM76iI/EsXVb1n1TEiWRIsWbc/QF5RFHlKjDkmX5+X0AAZnh
+      XGTmO/PM84yfh1MURQEhDOI4juMP+iAIOUgUAMI0XerE7bkgRCoQEYZoApCQFQoAYQoVgQjT
+      KACEaRQAwjQKAGEaBYAwjQJAmEYBIEyjABCmUQAI0ygAhGkUAMI0CgBhGgWAMI0CQJhGASBM
+      owAQplEACNMoAIRpFADCNAoAYRoFgDCNAkCYRgEgTKMAEKZRAAjTKACEaRQAwjQKAGEaBYAw
+      jQJAmEYBIEyjABCmUQAI0ygAhGkUAMI0CgBhGgWAMI0CQJhGASBMowAQplEACNMoAIRpFADC
+      NAoAYRoFgDCNAkCYRgEgTKMAEKZRAAjTKACEaRQAwjQKAGEaBYAwjQJAmEYBIEyjABCmUQAI
+      0ygAhGkUAMI0CgBhGgWAMI0CQJhGASBMowAQplEACNMoAIRpFADCNAoAYRoFgDCNAkCYRgEg
+      TKMAEKZRAAjTKACEaRQAwjQKAGEaBYAwjQJAmEYBIEyjABCmUQAI0ygAhGkUAMI0CgBhGgWA
+      MI0CQJhGASBMowAQplEACNMoAIRpFADCNAoAYRoFgDCNAkCYRgEgTKMAEKZRAAjTKACEaRQA
+      wjQKAGEaBYAwjQJAmEYBIEyjABCmUQAI0ygAhGkUAMI0CgBhmu6gD4CskRUZUNamOY4Dx3Hq
+      tKIoUBRl08/JzlEAniOdo/cwPPsIACDwAi63vAu72aF+Pr00hruPv1Gn2+ouorLwyDM/zhfJ
+      cx2A6cVx3B+6saN12hsvI99RtE9HtL/8YS9mlsYBADwvQJQSms+j8Yj6OQCEy08/w6PbHlES
+      ERej6rRBZ4JOeH5Ps+f3yAAEo36Me4Z2tE5r7cv7dDRkOyYWhvB150fq9OWWd1BVePQAjyiz
+      5zoA5PCRJAnhWHBtWpYO8Gi2dqgC4LDmwGbKyriMUW96RkdDXgSHKgAnq87hVM35A9m3oshY
+      DvkQjq1AVmSY9GZk2/Izlm8VRYE/7EMoGgAHDjazA3az45nV3MTFGHzBJSTEGHSCHtm2vF1f
+      IGKJKCLxMAw6IyxG6x4f6cE5VAHYiYSUwDfdn8AfWlLnvdb0NvIdLnU6LsZw9cHvEU1EAAD5
+      jiK8cuzH4Pm15hFRSmBgpgedo3fhCy5BlEVAUSDwAmxmB5oqz6C1tl2zb0mWMOTuxcORO/AG
+      FyBKIjgAOkEPV3YpLjS8AVd22b58b0VREI2H8f3gDQy6exGJhyErEniOh8Vow9GSZpypuwiT
+      wZy27rWuj7G0Mg8AsJkdeLPlp5j1TaJz9B6mFscgygkInACHNRcXj11BSW6lGuYbvZ9jfnka
+      kXhYs807/V/j4chtddppzcXllnf35bvvxgsbAL2gR3XhEXx6/wN13u3+L/F2288h8AIURcGD
+      4W8xMvcYAMBzAs4dfV1z8scTMXzZ8b8Ymu1L274oi1gOLWHI3asJgKzIuP3oSzwcuQMlpVJf
+      QTJwkwsjmPVO4Sdn3t+XKkx/2IvP7v83PH63Zr6kSFiJ+PHD8C24vRP4i7N/mxYCj9+NOd80
+      AMBmysI33R+jf6ozGfpVCQDR5Wl8eO8/8dft/4gCZzEAYDEwh5mlibTjWVrxaKZjiWjaMgfp
+      hW4Jri06hqqUk2zCM4zR1RN+ITCLB8NrV6aW6nMoy6tSpyVZwjfdn6Sd/AadEVajHXpBn7Y/
+      RVHQNXpPc/IbdSaU5FSgwFEMgRcAAAkpji87PkQwEti7LwsgLsbxVccfU05+Dk5rLkpzqzTt
+      CW7vJG72fZ5xW8FoAD0TP2hO/lSilMCjqY69OvQDc6juABOeISTE2Kaf63VGNFW0Qq8zAEi2
+      lF489iZmvVOIJiKQFRm3Hn2Bsrwq3Or7AgkpDiD5cN125FVw3Nr1YNwziP7pTnXaoDPh3NHX
+      UFvcCB2vQ0KMY3ppDG7vpLpMXIzhu8Eb6smf7yjCm6feQ669AIqi4PF0N77q/BCyIiMUW0H3
+      +H2cb/jRnv0+w7N9Ke0EHE7XXsDZI6/AoDMhHAviWtdH6h1vcKYHZ+ouItuWt+n29IIBxTnl
+      KMuvhtlgxbhnEEPutQvCYmBO/e/TNRdQX3oSnuUZdI7dU+efqDqLQmepOm3UG/fmy+6RQxWA
+      cc9QxnYBs8GCIyXH1QAAQI69AG1HXsHNvqsAAH/Ii4+++y1mvVMAAIHX4eKxNzXFAUVR0DP+
+      gzrNcRwut7yDuuJjmv05bbk4XtGqTg+5exGJh5LrgEN742XkZblWtwE0lrfg8Uw3Jla/w5C7
+      F+fqXwPP7c2NuGvsezV8ObY8nK//EXSrdyqryY72xisY9wxBkiUkpARGZvvRWrdxu4nNlIWf
+      vfJPmlq3hrITmPAMI756ERKltbvDk+KcXtBrAlCeX4PaosY9+X774YUuAj3RVHkGBSmtw27v
+      pHqi1Jc2o9pVr1l+JeLHbMqVvdBRjBpXw5b7SS0DG/QmFG3woJtaJAtGA1gJL2//i2QQjUfg
+      TSlvl+VVqyf/E1kWJ3LtBeq02zuhebcolSDoYDXaNfN4ToD5BaoBAg7ZHcBqtMNksGz6udlg
+      gcAJafMNOiNeaXoLf7j9a8jKWsOM1WTHhYZLaVfgYDSg1gwBQFl+rebheCOyLMMbXFCnTXoT
+      JjzDaeullvsTUhzBaAAOa07GbW/HcmhJ8+qEKCfU94q01qpgVyJ+SLKYFhSWHKoAnK5tR0v1
+      S5svwCWLHhspyalATVG9pgxbW9QIi9GWtuz654wsiyNtmfVkRYaUUiTwh3347IcPMqyRLGrt
+      Va2IKImpL5Kib/Ih+iYfZlwnISWSb6Ay7FAVgTiOA8/zm/9x/KaNTMuhJUwvjmnm9U91wR/2
+      pS2rEwya6fUvpW0keQzauw/H8Vv+7dUJyPO8JvocuC33TQ7ZHWC3JFnCzd7P0xpp4mIUt/qu
+      4q3W9zVFFYvRCr2gR2L1xF/wz0JRlIwtuDzHw5xSPDPpzXi77W+2fBPSYc3dzVdKY9Sbkse3
+      ehtoKDuJE1VtGdfheR10PLvFH4CRAPRPdWB0fhBA8spYlFOmVl+OzPVjaLYPR0ua1OVtpiw4
+      rLlqNd/wbD/O1/thtzgz7ifXXqjWUj2pdt2vFt/1sq15MOrN6oto88szyLblP/N3o9ZfIwIb
+      3GGfJ4fqPhgI++D2Tmb8i68rUwfCPtx5fA1PLo01RY14q/V9tXpPURTc6ruqeejV6ww4Vt6i
+      TsfFGD65/zv4govrtr2M/pTGoJoibU3Rta6PMb88k/Y9FEWBd2UBPwzfQjC6N41hPM+jNKUh
+      b2nFg+u9n6lVlqkSYhxj8wPoGvtuT/adymTQ1hJ1j9/f8wa/vXSo7gAdo3fROXov4zLvnf8l
+      yvKrASQfTG/0fo5QdAVAshbp5WOXYTNn4cyRi/hT96cAkrUhtx99hdebf6KWjZsr29A32aHe
+      BeaXZ/Bf1/8dRTllMK1ead3eSVhNWWgoS4alOKccpbmVmF5tjFoOLeGDm7+CK7sMhc4ScByH
+      aDyE+WU3fMFF6AQ9aou0bQtPo7X2ZYzNDyAhJhv4Hk12YGxuAGX5NcgyOyHJIpZDXsx6JxFN
+      RFFX3IgTVWf3bP8A4LRkw2SwILpa3PQFF/Hra/+GXHsBeI6HTtDhpxf+fk/3+TQOVQAAaN6v
+      ybicomBkth/Ds/3qvNO1F+BcLXMfLz+NwekezHiTdfd9kw/RWNaCopxkkUUn6HHl1Hv4+Lvf
+      YiXiB5CstpxcGEk7oic4jsNrzW/jo+9+g8Bq/b6syHB7J+D2pr8ns9cKHC683HgFf+r+VP2d
+      IvEwBmd69n3fT9gtTtSXNGsaw0Qpod4J87IKn9mxbMehKgLtRCi6svq+S/JEKM4px8mqc+rn
+      OkGP8w1vqG0Akizies9n6oMvABQ4ivBX7f+AGlfDprUmznV1+HlZhXjv/C9R42rYtIWX4zhk
+      WZxormzb01eLOY5Hc2Ub/qz1LzOeaAKvQ3FOOepLT+zZvlNdaLyE+tITh6KmiVNSmgKvu1cg
+      bu8C+0yEoivwrixsvWCKfIcLJoMF4VgQS4G1llGHNRtZluy05ed802qRARxQ4ChOe3CUZAnL
+      oSVMLowgFF2BJIuwmx1wZZchP8ulefUidR1/yIvppXEEwj6IUgI6QQ+72YFCZwmybXkw6Iya
+      mqXl4JJ6twEAV3apZtvReBgL/rX3b3Ls+bCatK21T8TFGOZ80/AsuxGOBSErMixGG5zWXBQ4
+      imAzO9JqqFJ/C52ggyu7LK1XijnflPoKhF5ngCu7FBuRZAlzvmlMLY4iEku+HmIx2eBylqCi
+      oG7DdZ61S6VZ3HMdAEL206XSrENwjyJkH1EACNMoAIRpFADCNAoAYRoFgDCNAkCYRgEgTKMA
+      EKZRAAjTKACEaRQAwjQKAGEaBYAwjQJAmHbo/knkQVkMzG/ajeBmBF5Ati1v0+5UookIPMtu
+      THiG4Q95wfMC7GYHirLL4MopTRsNZzm0hIS4dR9FqTgu2UP08zxQ3UGiX2Wb/ufb/0AspeeI
+      7XBac/F3r/0rhHUnn6IomFgYxq2+q1gMzG+4rsVow+WT76DKtTbA3JcdH2pGidwOvWDAz1/9
+      54y9QLOMAvCMKYqCvskH+LrrYygZeoULx4KI7DBwZOcoAPso+W9+tY9ZE54hXO/5P83J/2T8
+      LkVREI4FEY1HNJ34Pg2doIeOp//Nm6FfZpvaGy5BynRSKgo6Ru/BH/aqs5oqWjVdLsqyjNv9
+      X6kDcwBAtase5+vfSPabw/NqFyIDMz2wrOsJ+1T1S2ljFKw35O7VdNNe7Tq6ZY92LKMAbFPz
+      Fv1sevyz+Lb/K3XabnakdTsyNj+g6dWhOKcCV1re1XT5rhP0KMmtRHFORdo+arc4+SPxMDpG
+      72q2ldoVDElHAdgDiqKgc/Sephfp1KGaniwz5O5VO6ziOA7tjZc2He9gN0OpDrv74A+t3YHK
+      82uQlzIqJklHAdgD/rAXgzPd6rTZYMXxilbNSZyQ4phdHYERAPKyXChwFkNWZETjEYSiAeh1
+      BlhNWRsOwLeVuBhDR0q3kQIvoLX25T0bfulFRQF4SsnxxO5repQ7Vt6S1mFVQowjmNLplc1k
+      x8B0Dx5Pd2FpZR7xRAw8L8BqsqOu+BhO1VzQdLe+lfH5Ic0QSSW5lWo3j2RzFICnFImH0De5
+      1kO02WDZsMPZaDyiGXJ03DOEsdUu21WyiHgwhu8Hb2B8fhB/fvYXmuFNNyNKCTwYub1WvAKH
+      07XtdPXfBvqFnlL3+H11ZEgAOFLSBLs5vdZFlLUtuFu1Knv8s/j8we8hy1uPIDO5MIo535Q6
+      XZJboRnzmGyO7gBPIRwLoXfigTrN8wJO17Zv+AC7/kTmOR75jiKU5lUh116AhBjHwEyPphfp
+      We8k3N4JTb//G2334chtzbzmqrMQqO5/W+hXegqPpzuxElkb5rS+pBmODTrgBZDWgW592Ulc
+      aXlXM6+5sg3Xez5F1/j3AJJdq4/MPc4YgOmlMc3rEblZhah7jsflfd5QEWiXElICD4bXrrx6
+      QY/myjObLm82WMCnDOG6EvalDZDH8zxO1V7QlN19wcVNi0uKoqBj9K5mOy1V59IG6yObowDs
+      0sB0l2Z4o7L8GhQ6SzZdXi8YYE8ZbnUx4EEsnv6uj1Fv1gzdKkrxTQcFWQzMYWx+QJ12WnNR
+      V3x8R9+DdRSAXYgloprxtTiOw6ma8xmvvHqdAcU55ep0JB7C9NJY2nIJMa4Zr8yot2w49rGi
+      KMman5S7w8mqszAZzDv+PiyjAOzChGcIC4G1VxpKcio2fHUhFcdxOFJ8XHMy3+m/hnAsqJ7E
+      iqJgYKZb06Kcn1W44UO1L7iIkZThn6xGmzpWGdk+egjeIUmW8HD0rnrSchyHM3UXIWyj3F3t
+      qocruwyzvuQQrd7gAn5381d46ejrsJsdmFgYxoPhb9Xl9YIeR0qbNtzWw9E7mhEgW2rO09V/
+      FygAOzThGcJ8yisNhc4SlOfXbHv9V5t+jD/e+43adhAI+/BFxx82XPZ4RStybPlp8wNhHwam
+      U169MFr3bbyvFx0VgXZAlmVNrQsHDq217TuqdXFll+Lttp/BqM98tT5a0ozz9W+kzVdWX7tO
+      vfo3lJ7YVosxSUd3gB0IRHyIizG4Vmt7rCY7yvNrd7yd4pwK/OLVf8H9oZsYme1HJB6CrMjQ
+      8To4bXlorjyD4xWtGxarRCkB78qCegw8r0NThupXkhkNkneAkv8CLIRgNABZlqDXGeC05kC3
+      i7dByc5dKs3i6A5wgDiOg9Vkg9Vk23phsi/oGYAwjQJAmEYBIEyjABCmUQAI0ygAhGkUAMI0
+      CgBhGgWAMI0CQJhGASBMowAQplEACNMoAIRpFADCNAoAYRoFgDDt/wGUycOP2FWieAAAAABJ
+      RU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Credit Score Sheet' width='192'>
+      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
+      bfveCWWp7SMAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='76' name='Customer Details' width='192'>
+      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
+      g+kauQAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Score Chart' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>

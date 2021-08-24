@@ -1,0 +1,101 @@
+Id,Gender,Children,Income,Education,MarriageStatus,HousingType,Age,YearsEmployed,job,FamilyMembers,CreditScore,Rating
+1,male,0,112500,secondary,married,house,59,3,security staff,2,469,Bad
+2,female,0,270000,secondary,single,house,52,8,sales staff,1,598,Fair
+3,female,0,270000,secondary,single,house,52,8,sales staff,1,386,Bad
+4,female,0,270000,secondary,single,house,52,8,sales staff,1,705,Good
+5,female,0,270000,secondary,single,house,52,8,sales staff,1,547,Bad
+6,male,0,270000,college,married,house,46,2,accountants,2,357,Bad
+7,male,0,270000,college,married,house,46,2,accountants,2,416,Bad
+8,male,0,270000,college,married,house,46,2,accountants,2,612,Fair
+9,male,0,135000,secondary,married,house,49,3,laborers,2,810,Excellent
+10,male,0,135000,secondary,married,house,49,3,laborers,2,315,Bad
+11,male,0,135000,secondary,married,house,49,3,laborers,2,424,Bad
+12,male,0,135000,secondary,married,house,49,3,laborers,2,597,Fair
+13,male,0,135000,secondary,married,house,49,3,laborers,2,850,Excellent
+14,male,0,135000,secondary,married,house,49,3,laborers,2,575,Bad
+15,female,0,130500,high school,married,house,29,3,accountants,2,330,Bad
+16,female,0,130500,high school,married,house,29,3,accountants,2,359,Bad
+17,female,0,157500,secondary,married,house,27,4,laborers,2,458,Bad
+18,female,0,157500,secondary,married,house,27,4,laborers,2,662,Fair
+19,female,0,157500,secondary,married,house,27,4,laborers,2,503,Bad
+20,male,3,270000,secondary,married,house,35,3,laborers,5,485,Bad
+21,male,3,270000,secondary,married,house,35,3,laborers,5,805,Excellent
+22,male,1,405000,college,married,house,32,6,managers,3,750,Excellent
+23,male,1,405000,college,married,house,32,6,managers,3,633,Fair
+24,male,1,405000,college,married,house,32,6,managers,3,395,Bad
+25,male,1,405000,college,married,house,32,6,managers,3,785,Excellent
+26,male,1,405000,college,married,house,32,6,managers,3,457,Bad
+27,male,1,405000,college,married,house,32,6,managers,3,814,Excellent
+28,male,0,112500,secondary,married,house,56,12,drivers,2,390,Bad
+29,male,0,112500,secondary,married,house,56,12,drivers,2,666,Fair
+30,male,0,112500,secondary,married,house,56,12,drivers,2,437,Bad
+31,male,0,112500,secondary,married,house,56,12,drivers,2,731,Good
+32,male,0,112500,secondary,married,house,56,12,drivers,2,812,Excellent
+33,male,0,112500,secondary,married,house,56,12,drivers,2,748,Good
+34,male,0,112500,secondary,married,house,56,12,drivers,2,646,Fair
+35,male,0,112500,secondary,married,house,56,12,drivers,2,778,Excellent
+36,male,0,112500,secondary,married,house,56,12,drivers,2,541,Bad
+37,male,0,112500,secondary,married,house,56,12,drivers,2,469,Bad
+38,male,0,112500,secondary,married,house,56,12,drivers,2,558,Bad
+39,female,2,135000,secondary,married,house,43,9,laborers,4,357,Bad
+40,female,2,135000,secondary,married,house,43,9,laborers,4,409,Bad
+41,female,2,135000,secondary,married,house,43,9,laborers,4,823,Excellent
+42,female,2,135000,secondary,married,house,43,9,laborers,4,789,Excellent
+43,female,2,135000,secondary,married,house,43,9,laborers,4,357,Bad
+44,female,2,135000,secondary,married,house,43,9,laborers,4,724,Good
+45,female,2,135000,secondary,married,house,43,9,laborers,4,720,Good
+46,female,2,135000,secondary,married,house,43,9,laborers,4,807,Excellent
+47,female,2,135000,secondary,married,house,43,9,laborers,4,320,Bad
+48,female,2,135000,secondary,married,house,43,9,laborers,4,350,Bad
+49,female,2,135000,secondary,married,house,43,9,laborers,4,849,Excellent
+50,female,2,135000,secondary,married,house,43,9,laborers,4,686,Fair
+51,female,2,135000,secondary,married,house,43,9,laborers,4,547,Bad
+52,female,2,135000,secondary,married,house,43,9,laborers,4,578,Bad
+53,female,2,135000,secondary,married,house,43,9,laborers,4,450,Bad
+54,female,2,135000,secondary,married,house,43,9,laborers,4,591,Fair
+55,female,1,211500,secondary,Civil marriage,house,44,19,core staff,3,733,Good
+56,female,1,211500,secondary,Civil marriage,house,44,19,core staff,3,429,Bad
+57,male,0,360000,secondary,married,house,46,15,security staff,2,624,Fair
+58,male,0,360000,secondary,married,house,46,15,security staff,2,660,Fair
+59,female,2,126000,college,married,house,34,5,managers,4,826,Excellent
+60,female,2,126000,college,married,house,34,5,managers,4,831,Excellent
+61,female,2,126000,college,married,house,34,5,managers,4,702,Good
+62,female,2,126000,college,married,house,34,5,managers,4,645,Fair
+63,female,2,126000,college,married,house,34,5,managers,4,844,Excellent
+64,female,2,126000,college,married,house,34,5,managers,4,521,Bad
+65,female,2,126000,college,married,house,34,5,managers,4,435,Bad
+66,female,2,126000,college,married,house,34,5,managers,4,542,Bad
+67,female,2,126000,college,married,house,34,5,managers,4,787,Excellent
+68,female,2,126000,college,married,house,34,5,managers,4,565,Bad
+69,female,0,247500,college,Separated,apartment,47,4,core staff,1,773,Excellent
+70,female,0,247500,college,Separated,apartment,47,4,core staff,1,767,Excellent
+71,female,0,247500,college,Separated,apartment,47,4,core staff,1,391,Bad
+72,female,0,247500,college,Separated,apartment,47,4,core staff,1,690,Good
+73,female,0,297000,secondary,single,apartment,43,9,laborers,1,829,Excellent
+74,female,0,297000,secondary,single,apartment,43,9,laborers,1,516,Bad
+75,female,0,297000,secondary,single,apartment,43,9,laborers,1,474,Bad
+76,female,0,297000,secondary,single,apartment,43,9,laborers,1,750,Excellent
+77,female,0,297000,secondary,single,apartment,43,9,laborers,1,447,Bad
+78,female,0,297000,secondary,single,apartment,43,9,laborers,1,452,Bad
+79,female,0,297000,secondary,single,apartment,43,9,laborers,1,723,Good
+80,female,0,297000,secondary,single,apartment,43,9,laborers,1,733,Good
+81,female,0,297000,secondary,single,apartment,43,9,laborers,1,458,Bad
+82,female,0,297000,secondary,single,apartment,43,9,laborers,1,798,Excellent
+83,female,0,297000,secondary,single,apartment,43,9,laborers,1,681,Fair
+84,female,0,297000,secondary,single,apartment,43,9,laborers,1,701,Good
+85,female,0,297000,secondary,single,apartment,43,9,laborers,1,439,Bad
+86,female,0,297000,secondary,single,apartment,43,9,laborers,1,522,Bad
+87,female,0,297000,secondary,single,apartment,43,9,laborers,1,540,Bad
+88,female,0,297000,secondary,single,apartment,43,9,laborers,1,541,Bad
+89,female,0,297000,secondary,single,apartment,43,9,laborers,1,368,Bad
+90,female,0,297000,secondary,single,apartment,43,9,laborers,1,475,Bad
+91,female,0,297000,secondary,single,apartment,43,9,laborers,1,845,Excellent
+92,female,0,297000,secondary,single,apartment,43,9,laborers,1,697,Good
+93,female,0,297000,secondary,single,apartment,43,9,laborers,1,328,Bad
+94,female,0,297000,secondary,single,apartment,43,9,laborers,1,646,Fair
+95,female,0,297000,secondary,single,apartment,43,9,laborers,1,471,Bad
+96,female,0,297000,secondary,single,apartment,43,9,laborers,1,663,Fair
+97,female,0,297000,secondary,single,apartment,43,9,laborers,1,416,Bad
+98,female,0,297000,secondary,single,apartment,43,9,laborers,1,702,Good
+99,female,0,297000,secondary,single,apartment,43,9,laborers,1,845,Excellent
+100,female,0,297000,secondary,single,apartment,43,9,laborers,1,649,Fair
